@@ -338,6 +338,10 @@ jobs:
     - name: Initialize Config Fragment
       run: touch "${{ github.workspace }}/wild_gki.fragment"
 
+    - name: Add Custom DEVMEM Config
+      run: |
+        echo "CONFIG_DEVMEM=y" >> "${{ github.workspace }}/wild_gki.fragment"
+
     - name: Build Normal Kernel
       env:
         SOURCE_DATE_EPOCH: ${{ env.SOURCE_DATE_EPOCH }}
