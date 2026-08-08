@@ -201,6 +201,12 @@ jobs:
     - name: Setup Misc Configs
       uses: ./.github/actions/misc
 
+    - name: Add Custom DEVMEM Config
+      uses: ./.github/actions/set-kernel-config
+      with:
+        config_list: |
+          CONFIG_DEVMEM=y
+
     - name: Enable BTF
       uses: ./.github/actions/btf
       with:
